@@ -1,26 +1,60 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-3 xl:max-w-[1280px];
+  }
+}
+
+html {
+  font-size: 17px;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f8f8f8;
+  height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.yt-container {
+  transform: scale(0.4);
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
 }
-
-* {
-  box-sizing: border-box;
+.yt-container .yt-icon {
+  transform: scale(0.4);
+  background: #ff1f22;
+  width: 250px;
+  height: 200px;
+  border-radius: 90%/10%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.yt-container .yt-icon::before {
+  content: '';
+  position: absolute;
+  height: 180px;
+  width: 278px;
+  top: 10px;
+  left: -14px;
+  background: inherit;
+  border-radius: 10%/90%;
+  box-shadow: 30px 0 29px -30px rgba(0, 0, 0, 0.3),
+    -30px 0 29px -30px rgba(0, 0, 0, 0.3);
+}
+.yt-container .yt-icon .play-btn {
+  position: absolute;
+  left: 90px;
+  top: 50px;
+  width: 0;
+  border-left: 81.6px solid #fff;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  transform: scale(0.8);
 }
